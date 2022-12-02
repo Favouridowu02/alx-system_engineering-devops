@@ -1,2 +1,2 @@
 #!/bin/bash -x
-#!/usr/bin/pwd
+some/path/to/foo bar baz

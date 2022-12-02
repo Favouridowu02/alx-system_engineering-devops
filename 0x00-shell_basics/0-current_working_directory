@@ -1,2 +1,5 @@
-#!/bin/bash -x
-some/path/to/foo bar baz
+#!/bin/bash
+#!/bin/bash
+echo $0
+full_path=$(realpath $0)
+echo $full_path

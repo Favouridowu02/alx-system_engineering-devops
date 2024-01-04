@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# localhost resolves to 127.0.0.2
+# facebook.com resolves to 8.8.8.8.
+
+cp /etc/hosts ~/hosts.new
+# the above is just to make a copy of the host file
+# the line below is just to make a tweak to the file
+sed -i 's/127.$/127.0.0.2 localhost\n8.8.8.8 facebook.com/' ~/hosts.new
+cp -f ~/hosts.new etc/hosts
+# the line above copies the file hosts.new to hosts

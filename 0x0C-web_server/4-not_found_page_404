@@ -12,8 +12,7 @@ string_for_replacement="server_name _;\n\trewrite ^\/redirect_me https:\/\/githu
 sudo sed -i "s/server_name _;/$string_for_replacement/" /etc/nginx/sites-enabled/default
 
 echo "Ceci n'est pas une page" > /var/www/html/404.html
-sed -i  "0,/location \/ /{s/location \/ {/error_page 404 \/404.html;\n\tlocation = \/404.html {\n\t\troot \/var\/www\/html;\n\t\tinternal\n\t}\n\tlocation \/ {/}" test
+sed -i  "0,/location \/ {/s/location \/ {/error_page 404 \/404.html;\n\tlocation = \/404.html {\n\t\troot \/var\/www\/html;\n\t\tinternal;\n\t}\n\tlocation \/ {/" /etc/nginx/sites-available/default
 
-
-/etc/init.d/nginx restart
-#sudo service nginx restart
+# sudo /etc/init.d/nginx restart
+sudo service nginx restart

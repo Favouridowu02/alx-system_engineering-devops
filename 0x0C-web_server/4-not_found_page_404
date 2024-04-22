@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# installing Nginx to the server
+sudo apt update
+sudo apt install nginx -y
+
+# setting up the server
+echo "Hello world!" | sudo tee /var/www/html/index.html
+
+string_for_replacement="server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/favouridowu02 permanent;"
+
+# Setting up the 404 page
+sudo sed -i "s/server_name _;/$string_for_replacement/" /etc/nginx/sites-enabled/default
+
+echo "Ceci n'est pas une page" > /var/www/html/404.html
+sed -i  "0,/location \/ /{s/location \/ {/error_page 404 \/404.html;\n\tlocation = \/404.html {\n\t\troot \/var\/www\/html;\n\t\tinternal\n\t}\n\tlocation \/ {/}" test

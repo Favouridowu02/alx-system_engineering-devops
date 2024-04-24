@@ -1,7 +1,6 @@
 # Create a file that is in the tmp directory
 file { '/tmp/school':
-  ensure  => 'link',
-  target  => '/tmp/school',
+  ensure  => file,
   mode    => '0744',
   owner   => 'www-data',
   group   => 'www-data',

@@ -4,9 +4,11 @@ i=0
 while (( "$i" < 13 ))
 do
 	echo "Hour: $i"
-	for n in {1..59}
+	n=1
+	while (( "$n" < 60 ))
 	do
 		echo "$n"
+		((n++))
 	done
 	((i++))
 done

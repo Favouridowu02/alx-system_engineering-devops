@@ -7,9 +7,9 @@ if [ -e $i ]
 
 	if [ -s "$i" ]
 	then
-		echo "$i is not empty";
+		echo "$i file is not empty";
 	else
-		echo "$i is empty";
+		echo "$i file is empty";
 	fi
 
 	if [ -f "$i" ]

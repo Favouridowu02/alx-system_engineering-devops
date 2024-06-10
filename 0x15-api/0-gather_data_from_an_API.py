@@ -4,9 +4,9 @@ import requests
 from sys import argv
 
 if __name__ == "__main__":
-    """This is """
+    """This is a Module that prints a Format"""
     uri = "https://jsonplaceholder.typicode.com/"
-    user = requests.get(uri + "users{}".format(argv[1])).json()
+    user = requests.get(uri + "users/{}".format(argv[1])).json()
     todos = requests.get(uri + "todos", params={"userId": argv[1]}).json()
 
     completed = [t.get("title") for t in todos if t.get("completed") is True]

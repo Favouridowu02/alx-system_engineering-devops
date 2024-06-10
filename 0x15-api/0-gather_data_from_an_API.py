@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-from urllib.request import urlopen
 """Returns to-do list information for a given employee ID."""
-import requests
 from sys import argv
+import  requests
 
 if __name__ == "__main__":
+    """This is """
     uri = "https://jsonplaceholder.typicode.com/"
     user = requests.get(uri + "users{}".format(argv[1])).json()
     todos = requests.get(uri + "todos", params={"userId": argv[1]}).json()

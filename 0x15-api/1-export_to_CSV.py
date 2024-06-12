@@ -9,12 +9,12 @@ if __name__ == "__main__":
     """ This Part of the Module will run"""
     uri = "https://jsonplaceholder.typicode.com/"
     with open(argv[1] + '.csv', 'w', newline='') as csvfile:
-        writing = csv.writer(csvfile, delimiter=',', quotechar='"')
+        writing = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
         data = requests.get(uri + "users/{}".format(argv[1])).json()
         todos = requests.get(uri + "todos/", params={"userId": argv[1]}).json()
+        user_id = data["id"]
+        name = data["username"]
         for todo in todos:
-            user_id = str(data["id"]) + ""
-            name = str(data["name"]) + ""
-            status = str(todo["completed"]) + ""
-            title = str(todo["title"]) + ""
+            status = todo["completed"]
+            title = todo["title"]
             writing.writerow([user_id, name, status, title])

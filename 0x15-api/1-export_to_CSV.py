@@ -10,7 +10,7 @@ if __name__ == "__main__":
     """ """
     uri = "https://jsonplaceholder.typicode.com/"
     with open(argv[1] + '.csv', 'w', newline='') as csvfile:
-        writing = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+        writing = csv.writer(csvfile, delimiter=',', quotechar='"')
         data = requests.get(uri + "users/{}".format(argv[1])).json()
         todos = requests.get(uri + "todos/", params={"userId": argv[1]}).json()
         for todo in todos:

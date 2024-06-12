@@ -1,8 +1,6 @@
 #!/usr/bin/python
-"""
-    This Module Gets User Data from an API and stores it in aa csv file
-"""
-import
+""" This Module Gets User Data from an API and stores it in aa csv file"""
+import csv
 from sys import argv
 import json
 import requests

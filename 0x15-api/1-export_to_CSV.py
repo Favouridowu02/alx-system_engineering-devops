@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """ This Module Gets User Data from an API and stores it in aa csv file"""
 import csv
 from sys import argv

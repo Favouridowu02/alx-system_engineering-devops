@@ -1,11 +1,11 @@
-#!/usr/bin/python3
-import csv
-from sys import argv
-import requests
-import json
+#!/usr/bin/python
 """
     This Module Gets User Data from an API and stores it in aa csv file
 """
+import
+from sys import argv
+import json
+import requests
 
 if __name__ == "__main__":
     """ This Part of the Module will run"""

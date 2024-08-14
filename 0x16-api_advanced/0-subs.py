@@ -15,15 +15,16 @@ def number_of_subscribers(subreddit):
         subrredit is given
 
         Arguments:
-            subreddit: this is the subreddit
+            subreddit: the name of the subreddit
+
+        Returns:
+            int: The number of subscribers, or 0 if the subreddit is invalid
     """
-    url = "https://www.reddit.com/r/{}/about.json"
+    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
     headers = {'User-Agent': 'Custom'}
 
-    response = requests.get(url.format(subreddit), headers)
-    data = response.json()
-
+    response = requests.get(url, headers)
     if response.status_code != 200:
         return 0
-    else:
-        return data["data"]["subscribers"]
+    data = response.json()
+    return data["data"]["subscribers"]

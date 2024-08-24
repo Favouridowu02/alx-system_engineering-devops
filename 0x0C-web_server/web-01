@@ -7,4 +7,4 @@
 # ssh-add  ~/.ssh/school
 
 
-ssh -i ~/.ssh/school ubuntu@3.80.18.25
+ssh -i ~/.ssh/school ubuntu@100.26.249.187

@@ -1,0 +1,8 @@
+if [ "$string1" = "$string2"];
+then
+	command
+fi
+
+let "z=5**3"
+echo "z = $z"
+

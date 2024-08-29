@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+sed -i '/http {/a\\tserver {\n\t\tlisten 80;\n\t\tlocation / {\n\t\t\tadd_header X-Served-By "211766-web-02";\n\t\t}\n\t}\n' /etc/nginx/nginx.conf
+
+sudo nginx -t
+sudo service nginx restart

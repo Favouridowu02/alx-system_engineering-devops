@@ -13,7 +13,7 @@
 
 sudo apt-get update
 sudo apt-get install -y nginx
-mkdir -p/var/www/html
+mkdir -p /var/www/html
 echo "Hello World" | sudo tee /var/www/html/index.html
 echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
 
@@ -25,7 +25,7 @@ printf %s "server {
 	index  index.html index.htm;
 
 	location /redirect_me {
-		return 301 https://www.github.com/favour02@gmail.com/;
+		return 301 https://www.github.com/favour02/;
 	}
 
 	error_page 404 /404.html;
